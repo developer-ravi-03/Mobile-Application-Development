@@ -1,0 +1,91 @@
+# IDE / Editor Files
+.idea/
+# ===============================
+# OS Generated Files
+# ===============================
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+Thumbs.db
+
+# ===============================
+# IDE / Editor Files
+# ===============================
+.idea/
+*.iml
+.vscode/
+*.swp
+*.swo
+
+# ===============================
+# Gradle (Android)
+# ===============================
+.gradle/
+build/
+app/build/
+local.properties
+
+# ===============================
+# Android Studio
+# ===============================
+captures/
+.externalNativeBuild/
+.cxx/
+*.apk
+*.aab
+*.log
+
+# ===============================
+# Kotlin / Java
+# ===============================
+*.class
+*.jar
+
+# ===============================
+# Flutter
+# ===============================
+.flutter-plugins
+.flutter-plugins-dependencies
+.packages
+.pub-cache/
+.dart_tool/
+build/
+
+# ===============================
+# React Native
+# ===============================
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.expo/
+dist/
+
+# ===============================
+# Firebase / Secrets
+# ===============================
+google-services.json
+GoogleService-Info.plist
+.env
+.env.local
+.env.production
+
+# ===============================
+# iOS (if applicable)
+# ===============================
+ios/Pods/
+ios/.symlinks/
+ios/Flutter/App.framework
+ios/Flutter/Flutter.framework
+ios/Flutter/Generated.xcconfig
+ios/Flutter/flutter_export_environment.sh
+ios/Runner.xcworkspace
+
+# ===============================
+# Keystore / Signing Files
+# ===============================
+*.keystore
+*.jks
+key.properties
