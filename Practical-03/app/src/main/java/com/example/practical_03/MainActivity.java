@@ -27,7 +27,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, MainActivity2.class);
-                intent.putExtra("key1", "Hello from Second Activity");
+                intent.putExtra("key1", "Second Activity");
                 startActivity(intent);
             }
         });
