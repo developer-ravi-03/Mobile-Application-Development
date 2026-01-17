@@ -4,11 +4,11 @@ plugins {
 
 android {
     namespace = "com.example.unconvert"
-    compileSdk = 35
+    compileSdk = 36
 
     defaultConfig {
         applicationId = "com.example.unconvert"
-        minSdk = 16
+        minSdk = 24
         targetSdk = 35
         versionCode = 1
         versionName = "1.0"
