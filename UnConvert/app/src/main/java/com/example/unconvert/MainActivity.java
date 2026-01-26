@@ -26,17 +26,25 @@ public class MainActivity extends AppCompatActivity {
         button=findViewById(R.id.button);
         textView=findViewById(R.id.textView);
         editText=findViewById(R.id.editText);
-        button.setOnClickListener(new View.OnClickListener(){
+//        button.setOnClickListener(new View.OnClickListener(){
+//
+//            @Override
+//            public void onClick(View view) {
+////                Toast.makeText(MainActivity.this, "Hi Click Lister Worked", Toast.LENGTH_SHORT).show();
+//                String s=editText.getText().toString();
+//                int kg=Integer.parseInt(s);
+//                double pound= 2.205*kg;
+//                textView.setText("The Corresponding value in pounds is "+ pound);
+//            }
+//        });
 
-            @Override
-            public void onClick(View view) {
-//                Toast.makeText(MainActivity.this, "Hi Click Lister Worked", Toast.LENGTH_SHORT).show();
-                String s=editText.getText().toString();
-                int kg=Integer.parseInt(s);
-                double pound= 2.205*kg;
-                textView.setText("The Corresponding value in pounds is "+ pound);
-            }
-        });
-
+    }
+    public void calculate(View view){
+        String s=editText.getText().toString();
+        int kg=Integer.parseInt(s);
+        double pound= 2.205*kg;
+        textView.setText("The Corresponding value in pounds is "+ pound);
+        Toast.makeText(this, "Thanks for using this app", Toast.LENGTH_SHORT).show();
+        
     }
 }
