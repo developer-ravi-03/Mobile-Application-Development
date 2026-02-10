@@ -5,18 +5,54 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#F4F6F8"
     tools:context=".MainActivity">
 
+    <!-- Title -->
     <TextView
-        android:id="@+id/tvFirstActivity"
+        android:id="@+id/titleFirst"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="First Activity"
-        android:textSize="26sp"
+        android:textSize="28sp"
         android:textStyle="bold"
+        android:textColor="#1F2937"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/>
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="60dp"/>
+
+    <!-- Description -->
+    <TextView
+        android:id="@+id/descFirst"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Click below to open Second Activity"
+        android:textSize="14sp"
+        android:textColor="#6B7280"
+        app:layout_constraintTop_toBottomOf="@id/titleFirst"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="8dp"/>
+
+    <!-- Clickable TextView -->
+    <TextView
+        android:id="@+id/tvFirstActivity"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Go to Second Activity"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:textColor="#FFFFFF"
+        android:gravity="center"
+        android:padding="16dp"
+        android:backgroundTint="#2563EB"
+        android:background="@android:drawable/btn_default"
+        app:layout_constraintTop_toBottomOf="@id/descFirst"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="40dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginEnd="40dp"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -9,7 +9,6 @@ import android.widget.Toast;
 
 public class MainActivity2 extends AppCompatActivity {
     TextView t;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
