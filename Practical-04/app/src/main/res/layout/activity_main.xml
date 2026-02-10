@@ -50,7 +50,7 @@
         android:layout_marginBottom="20dp"
         android:ems="10"
         android:inputType="text"
-        android:text="Name"
+        android:hint="Enter Message"
         app:layout_constraintBottom_toTopOf="@+id/Asend"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
