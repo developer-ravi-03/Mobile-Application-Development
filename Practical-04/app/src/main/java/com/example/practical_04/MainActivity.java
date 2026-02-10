@@ -82,5 +82,4 @@ public class MainActivity extends AppCompatActivity {
             startActivity(Intent.createChooser(intent, "Share Image"));
         }
     }
-
 }
