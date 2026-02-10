@@ -51,36 +51,36 @@ public class MainActivity extends AppCompatActivity {
         startActivity(shareIntent);
     }
 
-    //Send Image Logic
+//    Send Image Logic
+//    It is the id of Image not count
+    private static final int PICK_IMAGE = 100;
     public void image(View view)
     {
-        BitmapDrawable drawable = (BitmapDrawable) ContextCompat.getDrawable(this, R.drawable.profilecard);
-
-        if (drawable == null) {
-            Toast.makeText(this, "Image not found", Toast.LENGTH_SHORT).show();
-            return;
-        }
-
-        Bitmap bitmap = drawable.getBitmap();
-
-        String path = MediaStore.Images.Media.insertImage(
-                getContentResolver(),
-                bitmap,
-                "SharedImage",
-                null
-        );
-
-        if (path == null) {
-            Toast.makeText(this, "Image not shared", Toast.LENGTH_SHORT).show();
-            return;
-        }
-
-        Uri imageUri = Uri.parse(path);
-
-        Intent intent = new Intent(Intent.ACTION_SEND);
+        Intent intent=new Intent(Intent.ACTION_GET_CONTENT);
         intent.setType("image/*");
-        intent.putExtra(Intent.EXTRA_STREAM, imageUri);
-
-        startActivity(Intent.createChooser(intent, "Share Image"));
+        startActivityForResult(Intent.createChooser(intent,"Select Image"),PICK_IMAGE);
     }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        //it Calls Parent class
+        super.onActivityResult(requestCode, resultCode, data);
+
+        if (requestCode == PICK_IMAGE && resultCode == RESULT_OK && data != null) {
+
+            Uri imageUri = data.getData();
+
+            if (imageUri == null) {
+                Toast.makeText(this, "Image not selected", Toast.LENGTH_SHORT).show();
+                return;
+            }
+
+            Intent intent = new Intent(Intent.ACTION_SEND);
+            intent.setType("image/*");
+            intent.putExtra(Intent.EXTRA_STREAM, imageUri);
+            intent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
+            startActivity(Intent.createChooser(intent, "Share Image"));
+        }
+    }
+
 }
