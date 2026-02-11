@@ -17,6 +17,8 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+import java.util.ArrayList;
+
 public class MainActivity extends AppCompatActivity {
 
     @Override
@@ -58,6 +60,9 @@ public class MainActivity extends AppCompatActivity {
     {
         Intent intent=new Intent(Intent.ACTION_GET_CONTENT);
         intent.setType("image/*");
+
+//        allow Choose multiple
+        intent.putExtra(Intent.EXTRA_ALLOW_MULTIPLE, true);
         startActivityForResult(Intent.createChooser(intent,"Select Image"),PICK_IMAGE);
     }
 
@@ -68,18 +73,41 @@ public class MainActivity extends AppCompatActivity {
 
         if (requestCode == PICK_IMAGE && resultCode == RESULT_OK && data != null) {
 
-            Uri imageUri = data.getData();
+//            Uri imageUri = data.getData();
+            ArrayList<Uri> imageUris = new ArrayList<>();
 
-            if (imageUri == null) {
+//            if there is multiple images are choosen then return getClipdata
+            if(data.getClipData()!=null){
+                int count=data.getClipData().getItemCount();
+                for(int i=0;i<count;i++){
+                    Uri imageUri=data.getClipData().getItemAt(i).getUri();
+                    imageUris.add(imageUri);
+                }
+            }else if(data.getData()!=null){
+//                if selected image is only one
+                imageUris.add(data.getData());
+            }
+
+//            Checking imageUri is null or Not
+            if (imageUris == null) {
                 Toast.makeText(this, "Image not selected", Toast.LENGTH_SHORT).show();
                 return;
             }
 
-            Intent intent = new Intent(Intent.ACTION_SEND);
+//            Creating intent for multiple Images
+            Intent intent = new Intent(Intent.ACTION_SEND_MULTIPLE);
             intent.setType("image/*");
-            intent.putExtra(Intent.EXTRA_STREAM, imageUri);
+
+            //create bundle
+            Bundle bundle=new Bundle();
+            bundle.putParcelableArrayList(Intent.EXTRA_STREAM,imageUris);
+
+//            Pass Bundle to the intent
+            intent.putExtras(bundle);
             intent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
-            startActivity(Intent.createChooser(intent, "Share Image"));
+
+//            Start Activity
+            startActivity(Intent.createChooser(intent, "Share Images"));
         }
     }
 }
