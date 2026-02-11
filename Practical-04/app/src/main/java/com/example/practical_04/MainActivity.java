@@ -26,7 +26,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
     }
-    private Uri imageUri;
+//    private Uri imageUri;
 //    private Intent intent;
     public void Click(View view)
     {
@@ -99,11 +99,14 @@ public class MainActivity extends AppCompatActivity {
             intent.setType("image/*");
 
             //create bundle
-            Bundle bundle=new Bundle();
-            bundle.putParcelableArrayList(Intent.EXTRA_STREAM,imageUris);
+//            Bundle bundle=new Bundle();
+//            intent.putParcelableArrayList(Intent.EXTRA_STREAM,imageUris);
+
+//            Without Bundle
+            intent.putParcelableArrayListExtra(Intent.EXTRA_STREAM,imageUris);
 
 //            Pass Bundle to the intent
-            intent.putExtras(bundle);
+//            intent.putExtras(bundle);
             intent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
 
 //            Start Activity
