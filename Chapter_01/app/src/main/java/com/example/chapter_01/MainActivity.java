@@ -1,7 +1,9 @@
 package com.example.chapter_01;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -25,9 +27,20 @@ public class MainActivity extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
-        Toast.makeText(this, "Welcome to my first App", Toast.LENGTH_SHORT).show();
+//        Toast.makeText(this, "Welcome to my first App", Toast.LENGTH_SHORT).show();
         textt=findViewById(R.id.text);
         textt.setText("Good Morning!");
+
+        // Next Button
+        Button next;
+        next=findViewById(R.id.Next);
+        next.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view) {
+                Intent intent=new Intent(MainActivity.this, MainActivity2.class);
+                startActivity(intent);
+            }
+        });
 
     }
     public void calculate(View view){
@@ -42,4 +55,6 @@ public class MainActivity extends AppCompatActivity {
         result=findViewById(R.id.result);
         result.setText("The Sum is : "+(num1+num2));
     }
+
+
 }
