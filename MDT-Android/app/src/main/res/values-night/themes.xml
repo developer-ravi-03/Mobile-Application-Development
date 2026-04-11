@@ -1,0 +1,7 @@
+<resources>
+    <style name="Theme.MDT" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/mdt_primary</item>
+        <item name="colorSecondary">@color/mdt_accent</item>
+        <item name="android:windowBackground">@color/mdt_background</item>
+    </style>
+</resources>

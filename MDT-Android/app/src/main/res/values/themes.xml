@@ -1,0 +1,10 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <style name="Theme.MDT" parent="Theme.Material3.Light.NoActionBar">
+        <item name="colorPrimary">@color/mdt_primary</item>
+        <item name="colorSecondary">@color/mdt_accent</item>
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:windowLightStatusBar">true</item>
+        <item name="android:windowBackground">@color/mdt_background</item>
+        <item name="android:fontFamily">sans-serif-medium</item>
+    </style>
+</resources>
