@@ -3,11 +3,11 @@
 ## 1. Title Page
 
 - Project Title: Mobile Diagnostic Tool for Android (MDT Android)
-- Course: Mobile Application Development (MAD)
-- Student Name:
-- Registration Number:
-- Batch/Semester:
-- Submission Date:
+- Course: Mobile Application Development (516L)
+- Student Name: Ravi Kumar
+- Roll Number: 11233024
+- Semester/Group: 6B2
+- Submission Date: 11/04/2026
 
 ## 2. Abstract
 
